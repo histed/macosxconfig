@@ -140,7 +140,7 @@
 ;; Backups and Autosaves
 (setq
          backup-by-copying t                 ;; don't clobber symlinks
-         backup-directory-alist '(("." . "~/shared/dotfiles/.emacs.d/backups/")) ;; put in one dir
+         backup-directory-alist '(("." . "~/.emacs.d/backups/")) ;; put in one dir
          delete-old-versions t
          kept-new-versions 6
          kept-old-versions 4
