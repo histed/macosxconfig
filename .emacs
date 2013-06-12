@@ -90,6 +90,7 @@
 
 ;; Replace path below to be where your matlab.el file is.
 (add-to-list 'load-path "/Users/histed/Repositories/matlab-emacs")
+(add-to-list 'load-path "/Users/histed/Repositories/macosxconfig")
 (load-library "matlab-load")
 
 ;; Enable CEDET feature support for MATLAB code. (Optional)
