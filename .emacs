@@ -232,23 +232,24 @@
 
 ;; This one is to catch emacs automatic changes.  Note emacs only changes the first custom-set-variables, but the last one "wins"
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(add-log-mailing-address user-mail-address)
  '(aquamacs-additional-fontsets nil t)
  '(aquamacs-customization-version-id 215 t)
  '(aquamacs-save-options-on-quit nil)
  '(aquamacs-tool-bar-user-customization nil t)
  '(auto-save-default t)
+ '(column-number-mode t)
  '(comint-scroll-show-maximum-output t)
  '(default-frame-alist (quote ((cursor-type . box) (vertical-scroll-bars . right) (internal-border-width . 0) (fringe) (modeline . t) (background-mode . light) (menu-bar-lines . 1) (right-fringe . 10) (left-fringe . 2) (border-color . "black") (cursor-color . "Red") (mouse-color . "black") (background-color . "white") (foreground-color . "black") (font . "-apple-Tahoma-medium-normal-normal-*-14-*-*-*-p-0-iso10646-1") (tool-bar-lines . 0) (height . 35) (width . 32))))
  '(ecb-options-version "2.32")
  '(ediff-diff-options "-b")
  '(fill-column 80)
  '(frame-background-mode (quote light))
- '(frame-title-format "%b")
+ '(frame-title-format "%b" t)
  '(mark-even-if-inactive t)
  '(matlab-arg1-max-indent-length 50)
  '(matlab-case-level (quote (2 . 2)))
@@ -271,15 +272,16 @@
  '(set-terminal-coding-system (quote utf-8))
  '(shift-select-mode t)
  '(tex-dvi-view-command "dviview")
+ '(tool-bar-mode nil)
  '(user-mail-address "histed@mit.edu")
  '(vc-follow-symlinks t)
  '(vc-make-backup-files t)
  '(visual-line-mode nil t)
  '(x-select-enable-clipboard nil))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(org-mode-default ((t (:inherit outline-mode-default :stipple nil :foreground "#000000" :strike-through nil :underline nil :slant normal :weight normal :height 140 :width normal :family "Tahoma")))))
 

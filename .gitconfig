@@ -1,0 +1,16 @@
+[user]
+	name = Mark Histed
+	email = mhisted@gmail.com
+[alias]
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
+
+[core]
+	editor = emacs
+[mergetool]
+	keepBackup = true
