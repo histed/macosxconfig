@@ -244,7 +244,7 @@
  '(auto-save-default t)
  '(column-number-mode t)
  '(comint-scroll-show-maximum-output t)
- '(default-frame-alist (quote ((cursor-type . box) (vertical-scroll-bars . right) (internal-border-width . 0) (fringe) (modeline . t) (background-mode . light) (menu-bar-lines . 1) (right-fringe . 10) (left-fringe . 2) (border-color . "black") (cursor-color . "Red") (mouse-color . "black") (background-color . "white") (foreground-color . "black") (font . "-apple-Tahoma-medium-normal-normal-*-14-*-*-*-p-0-iso10646-1") (tool-bar-lines . 0) (height . 35) (width . 32))))
+ '(default-frame-alist (quote ((cursor-type . box) (vertical-scroll-bars . right) (internal-border-width . 0) (fringe) (modeline . t) (background-mode . light) (menu-bar-lines . 1) (right-fringe . 10) (left-fringe . 2) (border-color . "black") (cursor-color . "Red") (mouse-color . "black") (background-color . "white") (foreground-color . "black") (font . "-apple-Tahoma-medium-normal-normal-*-14-*-*-*-p-0-iso10646-1") (tool-bar-lines . 0) (height . 35) (width . 80))))
  '(ecb-options-version "2.32")
  '(ediff-diff-options "-b")
  '(fill-column 80)
