@@ -21,4 +21,8 @@ ssh_agent_sync
 
 
 
+alias ls='/usr/local/bin/gls --color'
+
+export EDITOR=emacs
+export LESS="-R"
 
