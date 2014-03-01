@@ -211,6 +211,7 @@
 (if (eq system-type 'darwin) 
     (progn
       (setq x-select-enable-clipboard t)
+      (setq mac-option-modifier 'meta)  ;; use L and R option keys as meta, if we need special chars, need to cut-and-paste from elsewhere
       
       ;;(set-default-font        "-apple-monaco-medium-r-normal--10-100-72-72-m-100-mac-roman")
       ;;(set-default-font        "-apple-Tahoma-medium-normal-normal-*-12-*-*-*-p-0-iso10646-1")
