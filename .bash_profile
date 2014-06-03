@@ -1,11 +1,10 @@
 
-
 # normally added by Canopy installer; we have to manage this manually  (on all machines incl. rigs and desktops)
 #   histed 130613
-# VIRTUAL_ENV_DISABLE_PROMPT can be set to '' to make bashprompt show that Canopy is active, otherwise 1
+# run  conda config --set changeps1 false to remove (dir) prompt addition
+echo $PATH
 if [ -f ~/Library/Enthought/Canopy_64bit/User/bin/activate ]; then 
-    VIRTUAL_ENV_DISABLE_PROMPT=1 
-    source ~/Library/Enthought/Canopy_64bit/User/bin/activate
+    source ~/Library/Enthought/Canopy_64bit/User/bin/activate ~/Library/Enthought/Canopy_64bit/User
 fi
 
 # Old EPD path management - can be removed when all upgraded to canopy
