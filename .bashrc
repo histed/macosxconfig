@@ -11,7 +11,7 @@ function ssh_agent_sync {
           eval `ssh-agent -s` > /dev/null && echo "$SSH_AUTH_SOCK" > /tmp/lastsshagent-$USER 
       fi
   fi
-  ssh-add -k >/dev/null 2>&1
+  ssh-add -A -k >/dev/null 2>&1  # -A in 10.9 means the same as -k in 10.8; this command works for both
 }
 ssh_agent_sync
 
