@@ -17,7 +17,7 @@ export __CF_USER_TEXT_ENCODING=0x1F5:0x8000100:0x8000100
 #echo $PATH
 case `hostname` in
     mambo*)
-        source ~/anaconda/bin/activate root
+        source ~/anaconda/bin/activate brian_mkl
         ;;
     *)
         echo Hostname not found
