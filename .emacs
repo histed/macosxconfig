@@ -8,6 +8,16 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Package setup - see http://melpa.org/#/getting-started
+(require 'package) 
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize) 
+
+
 ;; set up recentf file list
 (require 'recentf)
 (recentf-mode 1)
@@ -266,6 +276,8 @@
  '(ns-tool-bar-display-mode nil t)
  '(ns-tool-bar-size-mode nil t)
  '(org-support-shift-select (quote always))
+ '(org-list-demote-modify-bullet (quote (("-" . "+") ("+" . "-") ("1." . "1)") ("1)" . "1."))))
+ '(org-list-indent-offset 4)
  '(post-url-pattern (quote ("\\<\\(\\(https?\\|news\\|mailto\\|ftp\\|gopher\\):\\|\\(www\\|ftp\\)\\.\\)[-~A-Za-z0-9._/%$+?#=]+[A-Za-z0-9/#]" "<URL:[^ ]+>")))
  '(py-indent-offset 4)
  '(py-python-command "ipython")
@@ -279,6 +291,7 @@
  '(vc-make-backup-files t)
  '(visual-line-mode nil t)
  '(x-select-enable-clipboard nil))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
