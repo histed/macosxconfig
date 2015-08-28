@@ -167,8 +167,10 @@
   ;;   (check to see if tool-bar-mode exists to make emacs20 happy)
   (if (fboundp 'tool-bar-mode)
       (tool-bar-mode 0))
-  ;; enable wheelmouse support
+  ;; enable wheelmouse support, better scrolling speed
   (mwheel-install)
+  (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
+  (setq mouse-wheel-progressive-speed nil)  ;; don't accelerate scrolling
   ;; use extended compound-text coding for X clipboard
   (set-selection-coding-system 'compound-text-with-extensions)
 )
