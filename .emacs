@@ -281,6 +281,7 @@
  '(org-support-shift-select (quote always))
  '(org-list-demote-modify-bullet (quote (("-" . "+") ("+" . "-") ("1." . "1)") ("1)" . "1."))))
  '(org-list-indent-offset 4)
+ '(org-blank-before-new-entry (quote ((heading . auto) (plain-list-item . nil))))
  '(post-url-pattern (quote ("\\<\\(\\(https?\\|news\\|mailto\\|ftp\\|gopher\\):\\|\\(www\\|ftp\\)\\.\\)[-~A-Za-z0-9._/%$+?#=]+[A-Za-z0-9/#]" "<URL:[^ ]+>")))
  '(py-indent-offset 4)
  '(py-python-command "ipython")
