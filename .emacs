@@ -100,8 +100,8 @@
 ;; Matlab stuff ;;;;;;;;;;;;;;;;
 
 ;; Replace path below to be where your matlab.el file is.
-(add-to-list 'load-path "/Users/histed/Repositories/matlab-emacs")
-(add-to-list 'load-path "/Users/histed/Repositories/macosxconfig")
+(add-to-list 'load-path "~/Repositories/matlab-emacs")
+(add-to-list 'load-path "~/Repositories/macosxconfig")
 (load-library "matlab-load")
 
 ;; Enable CEDET feature support for MATLAB code. (Optional)
@@ -241,7 +241,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Must go last
 
-(load "~/.emacs.local")
+(if (file-exists-p "~/.emacs.local")
+    (load "~/.emacs.local"))
 
 
 ;; This one is to catch emacs automatic changes.  Note emacs only changes the first custom-set-variables, but the last one "wins"
