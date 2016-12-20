@@ -1,13 +1,4 @@
 
-
-# Old EPD path management - can be removed when all upgraded to canopy
-#PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
-#export PATH
-
-# Add local path things
-PATH="${HOME}/shared/bin:/usr/local/bin:/usr/local/sbin:${PATH}"
-export PATH
-
 # crazy.  Default to utf-8  (try this as of 130701)
 export __CF_USER_TEXT_ENCODING=0x1F5:0x8000100:0x8000100
 
@@ -29,3 +20,6 @@ esac
 # execute other/local bashrc
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 
+
+# added by Anaconda3 4.0.0 installer
+export PATH="/Users/histed/anaconda3/bin:$PATH"

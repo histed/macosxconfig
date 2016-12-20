@@ -19,10 +19,14 @@ ssh_agent_sync
 #export LD_LIBRARY_PATH=/usr/local/lib:"$LD_LIBRARY_PATH}"
 #  MH 130710: use symlinks instead!
 
+# Add local path things
+PATH="${HOME}/shared/bin:/usr/local/bin:/usr/local/sbin:${PATH}"
+export PATH
 
 
 alias ls='/usr/local/bin/gls --color'
-
+alias moshl='mosh --server=/usr/local/bin/mosh-server'
+alias ssha='ssh -A'
 export EDITOR=emacs
 export LESS="-R"
 
