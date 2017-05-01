@@ -225,6 +225,17 @@
     (progn
       (setq x-select-enable-clipboard t)
       (setq mac-option-modifier 'meta)  ;; use L and R option keys as meta, if we need special chars, need to cut-and-paste from elsewhere
+
+      ;; Copy and paste using system clip; 170501, from https://apple.stackexchange.com/questions/85222/configure-emacs-to-cut-and-copy-text-to-mac-os-x-clipboard
+      (defun copy-from-osx ()
+        (shell-command-to-string "pbpaste"))
+      (defun paste-to-osx (text &optional push)
+        (let ((process-connection-type nil))
+          (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+            (process-send-string proc text)
+            (process-send-eof proc))))
+      (setq interprogram-cut-function 'paste-to-osx)
+      (setq interprogram-paste-function 'copy-from-osx)
       
       ;;(set-default-font        "-apple-monaco-medium-r-normal--10-100-72-72-m-100-mac-roman")
       ;;(set-default-font        "-apple-Tahoma-medium-normal-normal-*-12-*-*-*-p-0-iso10646-1")
