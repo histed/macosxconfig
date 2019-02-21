@@ -5,6 +5,7 @@
   (interactive)
   (query-replace "TotalTrials" "nTrials"))
 (global-set-key [f2] 'my-replace-prog)
+(global-set-key (kbd "<mouse-2>") nil)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -17,6 +18,13 @@
     ;; For important compatibility libraries like cl-lib
     (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
   (package-initialize))
+
+(when (> emacs-major-version 24)
+  ;; git gutter+ - note Mac system default: emacs 22
+  (require 'git-gutter+)
+  (global-git-gutter+-mode t)
+)
+
 
 
 ;; set up recentf file list
@@ -62,7 +70,86 @@
 
 
 ;; don't let Aquamacs or anything else use a different custom file
-(setq custom-file user-init-file) 
+(setq custom-file user-init-file)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(add-log-mailing-address user-mail-address)
+ '(aquamacs-additional-fontsets nil t)
+ '(aquamacs-customization-version-id 215 t)
+ '(aquamacs-save-options-on-quit nil)
+ '(aquamacs-tool-bar-user-customization nil t)
+ '(auto-save-default t)
+ '(column-number-mode t)
+ '(comint-scroll-show-maximum-output t)
+ '(default-frame-alist
+    (quote
+     ((cursor-type . box)
+      (vertical-scroll-bars . right)
+      (internal-border-width . 0)
+      (fringe)
+      (modeline . t)
+      (background-mode . light)
+      (right-fringe . 10)
+      (left-fringe . 2)
+      (border-color . "black")
+      (cursor-color . "Red")
+      (mouse-color . "black")
+      (background-color . "white")
+      (foreground-color . "black")
+      (font . "-apple-Tahoma-medium-normal-normal-*-14-*-*-*-p-0-iso10646-1")
+      (height . 35)
+      (width . 80))))
+ '(ecb-options-version "2.32")
+ '(ediff-diff-options "-b")
+ '(epg-gpg-program "/usr/local/bin/gpg1")
+ '(fill-column 80)
+ '(frame-background-mode (quote light))
+ '(frame-title-format "%b" t)
+ '(mark-even-if-inactive t)
+ '(matlab-arg1-max-indent-length 50)
+ '(matlab-case-level (quote (2 . 2)))
+ '(matlab-cline-start-skip "[ 	]*%[ 	]*" t)
+ '(matlab-indent-level 4)
+ '(matlab-maximum-indents (quote ((61 80 10) (40 80 10) (91 80 10) (123 80 10))))
+ '(matlab-mode-install-path
+   (list "~/matlab/Posit-matlab" "/usr/local/matlab/toolbox" "~/matlab"))
+ '(matlab-shell-command "/Users/histed/bin/matlab-nodesktop")
+ '(matlab-shell-command-switches (quote ("")))
+ '(mouse-yank-at-point t)
+ '(next-line-add-newlines nil)
+ '(ns-antialias-text t)
+ '(ns-tool-bar-display-mode nil t)
+ '(ns-tool-bar-size-mode nil t)
+ '(org-blank-before-new-entry (quote ((heading . auto) (plain-list-item))))
+ '(org-list-demote-modify-bullet
+   (quote
+    (("-" . "+")
+     ("+" . "-")
+     ("1." . "1)")
+     ("1)" . "1."))))
+ '(org-list-indent-offset 4)
+ '(org-support-shift-select (quote always))
+ '(package-selected-packages (quote (git-gutter+ git-gutter-fringe writeroom-mode)))
+ '(post-url-pattern
+   (quote
+    ("\\<\\(\\(https?\\|news\\|mailto\\|ftp\\|gopher\\):\\|\\(www\\|ftp\\)\\.\\)[-~A-Za-z0-9._/%$+?#=]+[A-Za-z0-9/#]" "<URL:[^ ]+>")))
+ '(py-indent-offset 4)
+ '(py-python-command "ipython")
+ '(require-final-newline t)
+ '(safe-local-variable-values (quote ((c-default-style . linux))))
+ '(select-enable-clipboard nil)
+ '(set-terminal-coding-system (quote utf-8))
+ '(shift-select-mode t)
+ '(tex-dvi-view-command "dviview")
+ '(tool-bar-mode nil)
+ '(user-mail-address "histed@mit.edu")
+ '(vc-follow-symlinks t)
+ '(vc-make-backup-files t)
+ '(visual-line-mode nil t))
 
 ;; Very general things probably dating from 1995 ;;;;;;;;;;;;;;;;
 
@@ -114,7 +201,7 @@
 (setq matlab-verify-on-save-flag t)	; turn on auto-verify on save
 
 (defun my-matlab-mode-hook ()
-  (setq fill-column 80)                 ; where auto-fill should wrap
+  (setq fill-column 200)                 ; where auto-fill should wrap; 181109 - set it huge
   (imenu-add-to-menubar "Find")		
   (setq matlab-shell-emacsclient-command "matlab-emacsclient.sh")
 )
@@ -174,6 +261,7 @@
   (setq mouse-wheel-progressive-speed nil)  ;; don't accelerate scrolling
   ;; use extended compound-text coding for X clipboard
   (set-selection-coding-system 'compound-text-with-extensions)
+
 )
 
 
@@ -257,56 +345,7 @@
 
 
 ;; This one is to catch emacs automatic changes.  Note emacs only changes the first custom-set-variables, but the last one "wins"
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(add-log-mailing-address user-mail-address)
- '(aquamacs-additional-fontsets nil t)
- '(aquamacs-customization-version-id 215 t)
- '(aquamacs-save-options-on-quit nil)
- '(aquamacs-tool-bar-user-customization nil t)
- '(auto-save-default t)
- '(column-number-mode t)
- '(comint-scroll-show-maximum-output t)
- '(default-frame-alist (quote ((cursor-type . box) (vertical-scroll-bars . right) (internal-border-width . 0) (fringe) (modeline . t) (background-mode . light) (right-fringe . 10) (left-fringe . 2) (border-color . "black") (cursor-color . "Red") (mouse-color . "black") (background-color . "white") (foreground-color . "black") (font . "-apple-Tahoma-medium-normal-normal-*-14-*-*-*-p-0-iso10646-1") (height . 35) (width . 80))))
- '(ecb-options-version "2.32")
- '(ediff-diff-options "-b")
- '(fill-column 80)
- '(frame-background-mode (quote light))
- '(frame-title-format "%b" t)
- '(mark-even-if-inactive t)
- '(matlab-arg1-max-indent-length 50)
- '(matlab-case-level (quote (2 . 2)))
- '(matlab-cline-start-skip "[ 	]*%[ 	]*" t)
- '(matlab-indent-level 4)
- '(matlab-maximum-indents (quote ((61 80 10) (40 80 10) (91 80 10) (123 80 10))))
- '(matlab-mode-install-path (list "~/matlab/Posit-matlab" "/usr/local/matlab/toolbox" "~/matlab"))
- '(matlab-shell-command "/Users/histed/bin/matlab-nodesktop")
- '(matlab-shell-command-switches (quote ("")))
- '(mouse-yank-at-point t)
- '(next-line-add-newlines nil)
- '(ns-antialias-text t)
- '(ns-tool-bar-display-mode nil t)
- '(ns-tool-bar-size-mode nil t)
- '(org-support-shift-select (quote always))
- '(org-list-demote-modify-bullet (quote (("-" . "+") ("+" . "-") ("1." . "1)") ("1)" . "1."))))
- '(org-list-indent-offset 4)
- '(org-blank-before-new-entry (quote ((heading . auto) (plain-list-item . nil))))
- '(post-url-pattern (quote ("\\<\\(\\(https?\\|news\\|mailto\\|ftp\\|gopher\\):\\|\\(www\\|ftp\\)\\.\\)[-~A-Za-z0-9._/%$+?#=]+[A-Za-z0-9/#]" "<URL:[^ ]+>")))
- '(py-indent-offset 4)
- '(py-python-command "ipython")
- '(require-final-newline t)
- '(set-terminal-coding-system (quote utf-8))
- '(shift-select-mode t)
- '(tex-dvi-view-command "dviview")
- '(tool-bar-mode nil)
- '(user-mail-address "histed@mit.edu")
- '(vc-follow-symlinks t)
- '(vc-make-backup-files t)
- '(visual-line-mode nil t)
- '(x-select-enable-clipboard nil))
+
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

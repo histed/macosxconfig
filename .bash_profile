@@ -20,6 +20,5 @@ esac
 # execute other/local bashrc
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 
-
-# added by Anaconda3 4.0.0 installer
-export PATH="/Users/histed/anaconda3/bin:$PATH"
+# anaconda enable
+. /Users/histed/anaconda3/etc/profile.d/conda.sh
