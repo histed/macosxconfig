@@ -23,6 +23,7 @@ ssh_agent_sync
 PATH="${HOME}/shared/bin:/usr/local/bin:/usr/local/sbin:${PATH}"
 export PATH
 
+. ~/anaconda37/etc/profile.d/conda.sh
 
 alias ls='/usr/local/bin/gls --color'
 alias moshl='mosh --server=/usr/local/bin/mosh-server'
