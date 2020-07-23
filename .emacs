@@ -25,6 +25,11 @@
   (global-git-gutter+-mode t)
 )
 
+;; misc packages: AuCTeX/reftex
+; Turn on RefTeX for AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/reftex_5.html
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+; Make RefTeX interact with AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/AUCTeX_002dRefTeX-Interface.html
+(setq reftex-plug-into-AUCTeX t)
 
 
 ;; set up recentf file list
@@ -133,7 +138,9 @@
      ("1)" . "1."))))
  '(org-list-indent-offset 4)
  '(org-support-shift-select (quote always))
- '(package-selected-packages (quote (git-gutter+ git-gutter-fringe writeroom-mode)))
+ '(package-selected-packages
+   (quote
+    (matlab-mode company company-auctex company-bibtex org auctex git-gutter+ git-gutter-fringe writeroom-mode)))
  '(post-url-pattern
    (quote
     ("\\<\\(\\(https?\\|news\\|mailto\\|ftp\\|gopher\\):\\|\\(www\\|ftp\\)\\.\\)[-~A-Za-z0-9._/%$+?#=]+[A-Za-z0-9/#]" "<URL:[^ ]+>")))
@@ -186,10 +193,13 @@
 
 ;; Matlab stuff ;;;;;;;;;;;;;;;;
 
+;;200720: now using elpa to install matlab-mode package
 ;; Replace path below to be where your matlab.el file is.
-(add-to-list 'load-path "~/Repositories/matlab-emacs")
-(add-to-list 'load-path "~/Repositories/macosxconfig")
-(load-library "matlab-load")
+;;(add-to-list 'load-path "~/Repositories/matlab-emacs")
+;;(add-to-list 'load-path "~/Repositories/macosxconfig")
+;;(load-library "matlab-load")
+
+
 
 ;; Enable CEDET feature support for MATLAB code. (Optional)
 ;; (matlab-cedet-setup)
@@ -197,6 +207,7 @@
 ;;(setq auto-mode-alist (cons '("\\.m\\'" . matlab-mode) auto-mode-alist))
 ;;(autoload 'matlab-shell "matlab" "Interactive Matlab mode." t)
 
+(defvar default-fill-column 100) ;;https://sourceforge.net/p/matlab-emacs/mailman/message/35691778/
 (setq matlab-indent-function nil)	; if you want function bodies indented
 (setq matlab-verify-on-save-flag t)	; turn on auto-verify on save
 
