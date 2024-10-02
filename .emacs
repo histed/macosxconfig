@@ -91,8 +91,7 @@
  '(column-number-mode t)
  '(comint-scroll-show-maximum-output t)
  '(default-frame-alist
-    (quote
-     ((cursor-type . box)
+    '((cursor-type . box)
       (vertical-scroll-bars . right)
       (internal-border-width . 0)
       (fringe)
@@ -107,50 +106,42 @@
       (foreground-color . "black")
       (font . "-apple-Tahoma-medium-normal-normal-*-14-*-*-*-p-0-iso10646-1")
       (height . 35)
-      (width . 80))))
+      (width . 80)))
  '(ecb-options-version "2.32")
  '(ediff-diff-options "-b")
  '(epg-gpg-program "/usr/local/bin/gpg1")
  '(fill-column 80)
- '(frame-background-mode (quote light))
+ '(frame-background-mode 'light)
  '(frame-title-format "%b" t)
  '(mark-even-if-inactive t)
  '(matlab-arg1-max-indent-length 50)
- '(matlab-case-level (quote (2 . 2)))
+ '(matlab-case-level '(2 . 2))
  '(matlab-cline-start-skip "[ 	]*%[ 	]*" t)
  '(matlab-indent-level 4)
- '(matlab-maximum-indents (quote ((61 80 10) (40 80 10) (91 80 10) (123 80 10))))
+ '(matlab-maximum-indents '((61 80 10) (40 80 10) (91 80 10) (123 80 10)))
  '(matlab-mode-install-path
    (list "~/matlab/Posit-matlab" "/usr/local/matlab/toolbox" "~/matlab"))
  '(matlab-shell-command "/Users/histed/bin/matlab-nodesktop")
- '(matlab-shell-command-switches (quote ("")))
+ '(matlab-shell-command-switches '(""))
  '(mouse-yank-at-point t)
  '(next-line-add-newlines nil)
  '(ns-antialias-text t)
  '(ns-tool-bar-display-mode nil t)
  '(ns-tool-bar-size-mode nil t)
- '(org-blank-before-new-entry (quote ((heading . auto) (plain-list-item))))
- '(org-list-demote-modify-bullet
-   (quote
-    (("-" . "+")
-     ("+" . "-")
-     ("1." . "1)")
-     ("1)" . "1."))))
+ '(org-blank-before-new-entry '((heading . auto) (plain-list-item)))
+ '(org-list-demote-modify-bullet '(("-" . "+") ("+" . "-") ("1." . "1)") ("1)" . "1.")))
  '(org-list-indent-offset 4)
- '(org-support-shift-select (quote always))
  '(package-selected-packages
-   (quote
-    (matlab-mode company company-auctex company-bibtex org auctex git-gutter+ git-gutter-fringe writeroom-mode)))
+   '(markdown-mode matlab-mode company company-auctex company-bibtex org auctex git-gutter+ git-gutter-fringe writeroom-mode))
  '(post-url-pattern
-   (quote
-    ("\\<\\(\\(https?\\|news\\|mailto\\|ftp\\|gopher\\):\\|\\(www\\|ftp\\)\\.\\)[-~A-Za-z0-9._/%$+?#=]+[A-Za-z0-9/#]" "<URL:[^ ]+>")))
+   '("\\<\\(\\(https?\\|news\\|mailto\\|ftp\\|gopher\\):\\|\\(www\\|ftp\\)\\.\\)[-~A-Za-z0-9._/%$+?#=]+[A-Za-z0-9/#]" "<URL:[^ ]+>"))
  '(py-indent-offset 4)
  '(py-python-command "ipython")
  '(require-final-newline t)
- '(safe-local-variable-values (quote ((c-default-style . linux))))
+ '(safe-local-variable-values '((c-default-style . linux)))
  '(select-enable-clipboard nil)
- '(set-terminal-coding-system (quote utf-8))
- '(shift-select-mode t)
+ '(set-terminal-coding-system 'utf-8)
+;; '(shift-select-mode t)
  '(tex-dvi-view-command "dviview")
  '(tool-bar-mode nil)
  '(user-mail-address "histed@mit.edu")
@@ -243,8 +234,7 @@
 
 ;;;; End of MATLAB stuff ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Org mode - latest- remove when distributions get 7.08
-(setq load-path (cons "/Users/histed/Repositories/org-mode/org-7.9.1/lisp" load-path))
+
 
 ;; Backups and Autosaves
 (setq
@@ -255,11 +245,10 @@
          kept-old-versions 4
          version-control t                   ;; use versioned backups
          auto-save-interval '90
-         auto-save-timeout '45
+         auto-save-timeout '30
 )
 ;;(setq auto-save-file-name-transforms
 ;;      `((".*" ,temporary-file-directory t)))
-
 
 (when window-system
   ;; disable toolbar
@@ -272,9 +261,7 @@
   (setq mouse-wheel-progressive-speed nil)  ;; don't accelerate scrolling
   ;; use extended compound-text coding for X clipboard
   (set-selection-coding-system 'compound-text-with-extensions)
-
 )
-
 
 ;; keys
 (global-set-key [f5] 'font-lock-mode)
@@ -318,7 +305,6 @@
 	   )
 )
 
-
 ;; Mac stuff, not aquamacs
 (if (eq system-type 'darwin) 
     (progn
@@ -346,7 +332,6 @@
       ;;)
       )
   )
-
                               
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Must go last
