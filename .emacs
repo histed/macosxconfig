@@ -19,11 +19,11 @@
     (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
   (package-initialize))
 
-(when (> emacs-major-version 24)
-  ;; git gutter+ - note Mac system default: emacs 22
-  (require 'git-gutter+)
-  (global-git-gutter+-mode t)
-)
+;;(when (> emacs-major-version 24)
+;;  ;; git gutter+ - note Mac system default: emacs 22
+;;  (require 'git-gutter+)
+;;  (global-git-gutter+-mode t)
+;;)
 
 ;; misc packages: AuCTeX/reftex
 ; Turn on RefTeX for AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/reftex_5.html
@@ -131,8 +131,11 @@
  '(org-blank-before-new-entry '((heading . auto) (plain-list-item)))
  '(org-list-demote-modify-bullet '(("-" . "+") ("+" . "-") ("1." . "1)") ("1)" . "1.")))
  '(org-list-indent-offset 4)
+ '(org-support-shift-select 'always)
  '(package-selected-packages
-   '(markdown-mode matlab-mode company company-auctex company-bibtex org auctex git-gutter+ git-gutter-fringe writeroom-mode))
+   '(markdown-mode matlab-mode company company-auctex company-bibtex org auctex git-gutter+ git-gutte
+ '(package-selected-packages
+   '(matlab-mode company company-auctex company-bibtex org auctex git-gutter-fringe writeroom-mode))
  '(post-url-pattern
    '("\\<\\(\\(https?\\|news\\|mailto\\|ftp\\|gopher\\):\\|\\(www\\|ftp\\)\\.\\)[-~A-Za-z0-9._/%$+?#=]+[A-Za-z0-9/#]" "<URL:[^ ]+>"))
  '(py-indent-offset 4)
