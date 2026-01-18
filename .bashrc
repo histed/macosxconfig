@@ -24,12 +24,16 @@
 PATH="${HOME}/shared/bin:/usr/local/bin:/usr/local/sbin:${PATH}"
 export PATH
 
-. ~/anaconda38/etc/profile.d/conda.sh
+#. ~/anaconda38/etc/profile.d/conda.sh
 
 alias ls='/usr/local/bin/gls --color'
 alias moshl='mosh --server=/usr/local/bin/mosh-server'
 alias ssha='ssh -A'
 alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+alias git-sync="$HOME/Repositories/git-sync/git-sync"
 export EDITOR=emacs
 export LESS="-R"
 
+
+. "$HOME/.local/bin/env"
+export PATH="/Users/histed/.pixi/bin:$PATH"

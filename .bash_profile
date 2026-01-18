@@ -14,16 +14,18 @@ if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/histed/miniconda38/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/histed/miniforge312/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/histed/miniconda38/etc/profile.d/conda.sh" ]; then
-        . "/Users/histed/miniconda38/etc/profile.d/conda.sh"
+    if [ -f "/Users/histed/miniforge312/etc/profile.d/conda.sh" ]; then
+        . "/Users/histed/miniforge312/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/histed/miniconda38/bin:$PATH"
+        export PATH="/Users/histed/miniforge312/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+. "$HOME/.local/bin/env"

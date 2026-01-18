@@ -24,6 +24,9 @@
 ;;  (require 'git-gutter+)
 ;;  (global-git-gutter+-mode t)
 ;;)
+(when (> emacs-major-version 29)
+  (which-key-mode)
+)
 
 ;; misc packages: AuCTeX/reftex
 ; Turn on RefTeX for AUCTeX, http://www.gnu.org/s/auctex/manual/reftex/reftex_5.html
@@ -91,22 +94,22 @@
  '(column-number-mode t)
  '(comint-scroll-show-maximum-output t)
  '(default-frame-alist
-    '((cursor-type . box)
-      (vertical-scroll-bars . right)
-      (internal-border-width . 0)
-      (fringe)
-      (modeline . t)
-      (background-mode . light)
-      (right-fringe . 10)
-      (left-fringe . 2)
-      (border-color . "black")
-      (cursor-color . "Red")
-      (mouse-color . "black")
-      (background-color . "white")
-      (foreground-color . "black")
-      (font . "-apple-Tahoma-medium-normal-normal-*-14-*-*-*-p-0-iso10646-1")
-      (height . 35)
-      (width . 80)))
+   '((cursor-type . box)
+     (vertical-scroll-bars . right)
+     (internal-border-width . 0)
+     (fringe)
+     (modeline . t)
+     (background-mode . light)
+     (right-fringe . 10)
+     (left-fringe . 2)
+     (border-color . "black")
+     (cursor-color . "Red")
+     (mouse-color . "black")
+     (background-color . "white")
+     (foreground-color . "black")
+     (font . "-apple-Tahoma-medium-normal-normal-*-14-*-*-*-p-0-iso10646-1")
+     (height . 35)
+     (width . 80)))
  '(ecb-options-version "2.32")
  '(ediff-diff-options "-b")
  '(epg-gpg-program "/usr/local/bin/gpg1")
@@ -116,7 +119,7 @@
  '(mark-even-if-inactive t)
  '(matlab-arg1-max-indent-length 50)
  '(matlab-case-level '(2 . 2))
- '(matlab-cline-start-skip "[ 	]*%[ 	]*" t)
+ '(matlab-cline-start-skip "[ \11]*%[ \11]*" t)
  '(matlab-indent-level 4)
  '(matlab-maximum-indents '((61 80 10) (40 80 10) (91 80 10) (123 80 10)))
  '(matlab-mode-install-path
@@ -132,10 +135,10 @@
  '(org-list-demote-modify-bullet '(("-" . "+") ("+" . "-") ("1." . "1)") ("1)" . "1.")))
  '(org-list-indent-offset 4)
  '(org-support-shift-select 'always)
+ '(org-indent-boundary-char ?*)
+ '(org-indent-indentation-per-level 1)
  '(package-selected-packages
-   '(markdown-mode matlab-mode company company-auctex company-bibtex org auctex git-gutter+ git-gutte
- '(package-selected-packages
-   '(matlab-mode company company-auctex company-bibtex org auctex git-gutter-fringe writeroom-mode))
+   '(gnu-elpa gnu-elpa-keyring-update mixed-pitch git-auto-commit-mode markdown-mode matlab-mode company company-auctex company-bibtex org auctex git-gutter+ git-gutter-fringe writeroom-mode))
  '(post-url-pattern
    '("\\<\\(\\(https?\\|news\\|mailto\\|ftp\\|gopher\\):\\|\\(www\\|ftp\\)\\.\\)[-~A-Za-z0-9._/%$+?#=]+[A-Za-z0-9/#]" "<URL:[^ ]+>"))
  '(py-indent-offset 4)
@@ -144,7 +147,6 @@
  '(safe-local-variable-values '((c-default-style . linux)))
  '(select-enable-clipboard nil)
  '(set-terminal-coding-system 'utf-8)
-;; '(shift-select-mode t)
  '(tex-dvi-view-command "dviview")
  '(tool-bar-mode nil)
  '(user-mail-address "histed@mit.edu")
@@ -247,8 +249,9 @@
          kept-new-versions 6
          kept-old-versions 4
          version-control t                   ;; use versioned backups
-         auto-save-interval '90
-         auto-save-timeout '30
+         auto-save-interval '20
+         auto-save-timeout '20
+         auto-save-visited-file-name t
 )
 ;;(setq auto-save-file-name-transforms
 ;;      `((".*" ,temporary-file-directory t)))
